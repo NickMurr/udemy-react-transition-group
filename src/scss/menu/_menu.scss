@@ -1,0 +1,97 @@
+$toggler-width: 120px;
+$toggler-height: 40px;
+$toggler-bg-color: #ffbf00;
+$toggler-active-bg-color: #ffcf40;
+$menu-starting-top: 0px;
+$menu-ending-top: 45px;
+$menu-width: 200px;
+$menu-max-height: 200px;
+$menu-bg-color: #ffdc73;
+$fade-from-color: transparent;
+$fade-to-color: black;
+$timeout: 350ms;
+
+.menu-component {
+  .container {
+    position: relative;
+  }
+
+  .toggler {
+    position: relative;
+    z-index: 2;
+    width: $toggler-width;
+    height: $toggler-height;
+    background-color: $toggler-bg-color;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 350ms;
+  }
+
+  .toggler-active {
+    background-color: $toggler-active-bg-color;
+  }
+
+  .menu {
+    position: absolute;
+    top: $menu-ending-top;
+    z-index: 1;
+    box-sizing: border-box;
+    width: $menu-width;
+    padding: 0 20px;
+    overflow: hidden;
+    background-color: $menu-bg-color;
+    border-radius: 5px;
+  }
+
+  .list {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .list-item {
+    padding: 5px 0;
+  }
+
+  .list-item--active {
+    color: green;
+    transition: 250ms;
+  }
+
+  .balloon-enter,
+  .balloon-appear {
+    top: $menu-starting-top;
+    width: $toggler-width;
+    max-height: $toggler-height;
+    color: $fade-from-color;
+    background-color: $toggler-bg-color;
+  }
+
+  .balloon-enter-active,
+  .balloon-appear-active {
+    top: $menu-ending-top;
+    width: $menu-width;
+    max-height: $menu-max-height;
+    color: $fade-to-color;
+    background-color: $menu-bg-color;
+    transition: all $timeout;
+  }
+
+  .balloon-exit {
+    top: $menu-ending-top;
+    width: $menu-width;
+    max-height: $menu-max-height;
+    color: $fade-to-color;
+    background-color: $menu-bg-color;
+  }
+
+  .balloon-exit-active {
+    top: $menu-starting-top;
+    width: $toggler-width;
+    max-height: $toggler-height;
+    color: $fade-from-color;
+    background-color: $toggler-bg-color;
+    transition: all $timeout;
+  }
+}
