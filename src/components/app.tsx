@@ -1,9 +1,10 @@
 import React from "react";
-
+import "../scss/main.scss";
+import Menu from "./menu";
 const App = () => {
   return (
-    <div>
-      <span>1</span>
+    <div className="app">
+      <Menu />
     </div>
   );
 };
