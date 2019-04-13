@@ -17,7 +17,8 @@
     "styled": "^1.0.0",
     "tslint": "^5.15.0",
     "tslint-react": "^4.0.0",
-    "typescript": "3.4.3"
+    "typescript": "3.4.3",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
